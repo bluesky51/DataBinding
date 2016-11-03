@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.sky.databinding.bean.Person"></import>
+
+
+        <variable
+            name="person1"
+            type="com.sky.databinding.bean.Person1"></variable>
+
+        <variable
+            name="persons"
+            type="java.util.List&lt;Person&gt;"></variable>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        tools:context="net.sourceforge.simcpux.databinding.MainActivity">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:onClick="@{person1.clickName}"
+            android:text="@{person1.name}" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <include
+                layout="@layout/layout_person1"
+                app:person="@{persons[0]}"></include>
+
+            <include
+                layout="@layout/layout_person2"
+                app:person="@{persons[1]}"></include>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></RelativeLayout>
+
+    </LinearLayout>
+</layout>

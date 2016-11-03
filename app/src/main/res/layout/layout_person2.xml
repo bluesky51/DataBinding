@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:rounded="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="person"
+            type="com.sky.databinding.bean.Person">
+
+        </variable>
+    </data>
+
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:scaleType="fitXY"
+                app:imageUrl="@{person.icon}"
+                rounded:riv_border_color="@color/colorPrimary"
+                rounded:riv_border_width="1dp"
+                rounded:riv_corner_radius="10dp" />
+            <!--android:onClick="@{person.clickName}"
+                        android:onLongClick="@{person.longClickName}"-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`名字:`+person.name}"
+                android:textColor="@{person.vip ? 0xffff0000:0xff00ff00 }" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`性别:`+person.gender}" />
+            <!--双引号中不能有单引号，单引号中可以有双引号，双引号只能出现反引号，在数字1之前的键-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`年龄:`+person.age}" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</layout>
