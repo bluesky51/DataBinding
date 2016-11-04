@@ -1,23 +1,6 @@
 # DataBinding
 DataBinding的基本使用以及结合本地和网络数据进行数据绑定(DataBinding＋Retrofit+ListView/RecyclerView)
 
-Skip to content
-This repository
-Search
-Pull requests
-Issues
-Gist
- @bluesky51
- Unwatch 1
-  Star 0
-  Fork 0 bluesky51/DataBinding
- Code  Issues 0  Pull requests 0  Projects 0  Wiki  Pulse  Graphs  Settings
-Branch: master Find file Copy pathDataBinding/DataBinding使用说明
-05bcaea  a day ago
-@bluesky51 bluesky51 first commit
-1 contributor
-RawBlameHistory     
-116 lines (111 sloc)  5.38 KB
 DataBinding优势： 1.不用findViewById();
                 2.将数据分解到各个view
                 3.在UI线程上更新数据
@@ -133,6 +116,4 @@ BindingAdapter的含义：1、它是一个注解关键词；
                     2、他是用来标记的方法的；
                     3、它的功能是用来设置view的属性值。它修饰的方法必须用public static 修饰
 4》加载网络数据完成ListView效果：具体看CommnAdapter:设置数据viewDataBinding的实现类setAdapter
-4》加载网络数据完成RecyclerView效果：具体看RecyclerCommonAdapter:设置数据viewDataBinding的实现类setAdapter
-Contact GitHub API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privacy Security Status Help
+5》加载网络数据完成RecyclerView效果：具体看RecyclerCommonAdapter:设置数据viewDataBinding的实现类setAdapter
